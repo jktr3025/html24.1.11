@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="hi">안녕하세요</div>
+    <input type="button" value="텍스트" onclick="changeText()">
+    <input type="button" value="배경" onclick="changeBg()">
+
+    <h1 class="hel">hello</h1>
+    <input type="button" value="텍스트 / 배경" onclick="changeAll()">
+
+    <h2 class="h2">오늘은 1월 11일입니다</h2>
+    <input type="button" value="텍스트 / 배경" onclick="change()">
+
+    <script lang="java">
+        function changeText(){
+            var hi = document.getElementById("hi")
+            hi.style.color = "red"
+        }//
+
+        function changeBg(){ 
+            var hi = document.getElementById("hi")
+            hi.style.backgroundColor = "orange"
+        }//
+
+        function changeAll(){
+            var hel = document.querySelector(".hel")
+            hel.style.cssText = "color : skyblue ; background-color : navy"
+        }//
+
+        function change(){
+            const h2 = document.querySelector(".h2")
+            h2.style.cssText = "color : pink ; background-color : olive";
+            h2.style.fontWeight = "100";
+            h2.style.color = "yellow";
+            // h2.style.css속성 = "" : 기존에 정의된 스타일에 새로운 속성 추가
+            // h2.style.cssText = "" : 기존에 정의된 스타일은 지우고 새로운 속성 추가
+            //순서도 중요해서 cssText -> css속성이면 기존 스타일에 추가되지만
+            //css속성 -> cssText이면 기존 스타일을 지우고 cssText만 적용됨
+        }//
+    </script>
+    <!-- 클릭 이벤트가 붙으면 스크립트가 위에 오면 돔구조라 독해 불가함 -->
+</body>
+</html>

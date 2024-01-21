@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hi" style="color:white ; background-color: red;">안녕하세요</div>
+    <input type="button" value="스타일 읽어오기" onclick="read()">
+    <div id="print"></div>
+
+    <h1 class="h1" style="color:blue ; background-color: red;">hello</h1>
+    <input type="button" value="스타일 읽어오기" onclick="readCom()">
+    <p class="write"></p>
+
+    <h2 class="me" style="color : pink ;  background-color: blue;">안녕하세요</h2>
+    <input type="button" value="텍스트" onclick="color()">
+    <input type="button" value="배경" onclick="bg()">
+    <p class="good"></p>
+
+    <script lang="java">
+        function read(){
+            const elem = document.getElementById("hi") 
+            const print = document.getElementById("print")
+
+            print.innerHTML += elem.style.color + "\n"
+            print.innerHTML += elem.style.backgroundColor + "\n"
+
+            // \n 줄바꿈 명령어
+            //+= 누적 명령어를 줘야 다음 명령어를 줬을 떄 기존 내용이 사라지지 않음
+
+        }//
+
+            function readCom(){
+                var hh1 =  document.querySelector(".h1")
+                var write =  document.querySelector(".write")
+                var col = getComputedStyle(hh1).color
+                var bg = getComputedStyle(hh1).backgroundColor
+                write.innerHTML += "color : " + col + "\n"
+                write.innerHTML += bg + "\n"
+        }//
+
+        function color(){
+            var me = document.querySelector(".me")
+            var good = document.querySelector(".good")
+            var m_c = getComputedStyle(me).color
+            good.innerHTML += "color : " + m_c + "\n"
+
+
+        }
+
+    </script>
+</body>
+</html>

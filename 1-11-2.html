@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            border: 4px dotted dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="img/animal01.png" alt="animal01" id="ani_img">
+    </div><!-- box -->
+
+
+
+    <script lang="java">
+        var img_array = ["img/animal01.png", "img/animal02.png", "img/animal03.png",
+        "img/animal04.png", "img/animal05.png", "img/animal06.png",
+        "img/animal07.png", "img/animal08.png", "img/animal09.png",
+        "img/animal10.png", "img/animal11.png", "img/animal12.png"]
+
+        var num = img_array.length //12
+        console.log(num)
+
+        // var img_path = document.querySelector("#ani_img")
+        // var img_path = document.getElementById("ani_img").getAttribute("src")
+        // //getAttribute : 속성을 읽어들이는 명령어
+        // console.log(img_path)
+
+        var i = 0;
+
+        // setInterval(function(){
+        //     document.querySelector("#ani_img").setAttribute("src", img_array[i])
+        //     //setAttribute : 속성을  a에서 b로 바꾸는 명령어
+        //     if(i < num-1){
+        //         i++
+        //     }else{
+        //         i=0;
+        //     }
+        //     console.log(i)
+        // },2000)
+
+        //num은 개수 구하기라 12이지만 인덱스는 0~11로 작동하므로 
+        //num-1을 해야 맞음
+
+        // setInterval(function(){
+        //     document.querySelector("#ani_img").setAttribute("src", img_array[0])
+
+        //     var first = img_array.shift()
+        //     console.log("first" + first)
+        //     img_array.push(first)
+        //     // img_array.push(first) 를 안해주면 마지막 이미지까지 보이고
+        //     // 더 이상 보일 자료가 없어지는 거라서 순환 되지 않음
+        // },2000)
+
+        setInterval(function(){
+            document.querySelector("#ani_img").setAttribute("src", img_array[11])
+
+            var last = img_array.pop()
+            console.log("last" + last)
+            img_array.unshift(last)
+        },1000)
+
+    </script>
+    <!-- 
+        돔구조라 script를 맨 위에 써주면 해석할 거리가 없어서 작동 안 함
+     -->
+</body>
+</html>

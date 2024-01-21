@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="java">
+
+        var array = [123, "korea", true, function(){}, {}, [500,600]]
+        console.log(array)
+        var count = array.length
+        console.log(count)
+
+        var arrayA = [0,1]
+        arrayA.push(2,3)
+        console.log(arrayA)
+        // 마지막 요소 뒤에 배열 추가 (append)
+
+        var arrayB = [0,1,2]
+        arrayB.pop()
+        console.log(arrayB)
+        // 마지막 요소를 제거
+
+        // b_p = arrayB.pop()
+        // console.log(b_p)
+        // console.log(arrayB)
+
+        var arrayC = [1,2,5]
+        arrayC.unshift(0)
+        console.log(arrayC)
+        // 첫 번쨰 요소 앞에 배열 추가
+        
+        var arrayD = [100,200,300,400]
+        arrayD.shift()
+        console.log(arrayD)
+        // 첫번쨰 요소를 제거
+
+        // d_p = arrayD.shift()
+        // console.log(d_p)
+        // console.log(arrayD)
+
+        var arrayE = [1,5,7,9,11,13,15]
+        arrayE.splice(0, 2, "사자")
+        console.log(arrayE)
+        arrayE.splice(3, 2, "사자")
+        console.log(arrayE)
+        // arrayE.splice(start, deletecount, el)
+        //      시작할 인덱스 번호, 지울 요소 갯수, 그 뒤에 추가할 요소 
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
